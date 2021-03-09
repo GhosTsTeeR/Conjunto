@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="body-img">
+        <img class="img" src="/img/suaza.jpg" >
+        <br><br>
+        <div class="text-center">
+            <p>GhosTsTeeR</p>
+        </div>
+    </div>
+    <img class="img-perfil" src="/img/suaza.jpg" >
+</div>
+<div style="background:rgb(103, 234, 252) ; "  class="container">
+    <div class="row">
+        <div class="col">
+            <a href="/users/profile-information" style="background-color: rgb(103, 234, 252);" style="size: auto; background-color: black;" type="button" class="btn btn-primary btn-block">Informacion</a>
+
+        </div>
+        <div class="col">
+            <a style="background-color: rgb(103, 234, 252); size: auto; background-color: black;" style="size: auto; background-color: black;" type="button" class="btn btn-primary btn-block">Seguridad</a>
+
+        </div>
+        <div class="col">
+            <a href="/users/profile-members" style="background-color: rgb(103, 234, 252);" style="size: auto; background-color: black;" type="button" class="btn btn-primary btn-block">Integrantes</a>
+        </div>
+    </div>
+</div>
+<br>
+<div style="border: 2px solid black; padding: 20px;" style="padding: 20px;" class="container">
+    <div class="container">
+        <div style="background:rgb(179, 253, 145) ; "  class="container">
+            <div class="row">
+                <div class="col">
+                    <a href="/users/profile-security-claims" style="background:rgb(179, 253, 145) ; " style="size: auto; background-color: black;" type="button" class="btn btn-primary btn-block">Quejas </a>
+
+                </div>
+                <div class="col">
+                    <button style="background:rgb(179, 253, 145) ; size: auto; background-color: black;" style="size: auto; background-color: black;" type="button" class="btn btn-primary btn-block">Infomacion</button>
+
+                </div>
+                <div class="col">
+                    <a href="/users/profile-security-alerts" style="background:rgb(179, 253, 145) ; "style="size: auto; background-color: black;" type="button" class="btn btn-primary btn-block">Emergencia</a>
+                </div>
+            </div>
+
+        </div>
+            <div style="max-width: 800px; padding: 10px;" class=" xd mx-auto">
+                        <div  class="caja-posteo">
+                            <div  class="card text-center ">
+                                <div class="card-body">
+                                    <div style="height: 500px;" class=" Content " style="height: 10rem;">
+                                        {{#each todasTarjetas}}
+                                                {{usuario}}
+                                                <form action="/signUp" method="POST">    
+                                                    <div class="card-body" >
+                                                        <h6>{{texto}}</h6>
+                                                    </div> 
+                                                </form>                          
+                                        {{/each}}                  
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>
+            </div>
+    </div>
+</div>
+<br>
+

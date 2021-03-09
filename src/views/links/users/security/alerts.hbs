@@ -1,0 +1,195 @@
+<div class="container">
+    <div class="body-img">
+        <img class="img" src="/img/suaza.jpg" >
+        <br><br>
+        <div class="text-center">
+            <p>GhosTsTeeR</p>
+        </div>
+    </div>
+    <img class="img-perfil" src="/img/suaza.jpg" >
+</div>
+<div style="background:rgb(103, 234, 252) ; "  class="container">
+    <div class="row">
+        <div class="col">
+            <a href="/users/profile-information" style="background:rgb(179, 253, 145) ; "  type="button" class="btn btn-primary btn-block">Informacion</a>
+
+        </div>
+        <div class="col">
+            <a href="/users/profile-security-information" style="background-color: rgb(103, 234, 252); size: auto; background-color: black;" style="size: auto; background-color: black;" type="button" class="btn btn-primary btn-block">Seguridad</a>
+
+        </div>
+        <div class="col">
+            <a href="/users/profile-members" style="background-color: rgb(103, 234, 252);" style="size: auto; background-color: black;" type="button" class="btn btn-primary btn-block">Integrantes</a>
+        </div>
+    </div>
+</div>
+<br>
+<div style="border: 2px solid black; padding: 20px;" style="padding: 20px;" class="container">
+    <div class="container">
+        <div style="background:rgb(179, 253, 145) ; "  class="container">
+            <div class="row">
+                <div class="col">
+                    <a href="/users/profile-security-claims" style="background:rgb(179, 253, 145) ; "  type="button" class="btn btn-primary btn-block">Quejas</a>
+
+                </div>
+                <div class="col">
+                    <a href="/users/profile-security-information" style="background:rgb(179, 253, 145) ;"  type="button" class="btn btn-primary btn-block">Infomacion</a>
+                </div>
+                <div class="col">
+                    <a href="/users/profile-security-alers" style="background:rgb(179, 253, 145) ;size: auto; background-color: black; "style="size: auto; background-color: black;" type="button" class="btn btn-primary btn-block">Emergencia</a>
+                </div>
+            </div>
+
+        </div>
+        <div style="max-width: 800px; padding: 10px;" class=" xd mx-auto">
+            <div  class="caja-posteo">
+                <div  class="card text-center ">
+                    <div class="card-body">
+                        <h5> Emergencias</h5>
+                        <div style="height: 300px;" class=" row Content " >
+                            {{#each todasQuejas}}
+                                <div class="col mx-auto">
+                                    <div class="card text-center">
+                                        <div style="background: rgb(139, 247, 247);" class="card-body">
+                                            <div class="card">
+                                                <h4 class="card-title text-uppercase">
+                                                    <h6>Usuario-Tipo de Queja</h6>
+                                                    <h6>{{idUsuario}}-{{idTipoQueja}}</h6>
+                                                </h4>
+                                                <p>
+                                                    {{quejaTxT}}
+                                                </p>
+                                                <br>
+                                                <h6>
+                                                    {{texto}} 
+                                                </h6>
+                                                <h6>
+                                                    Estado: {{estado}}
+                                                    <br>
+                                                    <br>
+                                                    {{timeago creacion}}
+                                                </h6>
+                                                <a href="" class="btn btn-danger" data-toggle="modal" data-target="#eliminartarjeta{{tarjeta}}">Eliminar</a>
+                                                <a href="" class="btn btn-info" data-toggle="modal" data-target="#modificatarjeta{{tarjeta}}">Modificar</a>
+                                                <div class="modal" id="eliminartarjeta{{tarjeta}}">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">Eliminar</h4>
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            </div>
+
+                                                            <div class="modal-body">
+                                                                Desea <a style="background-color: red;" >Eliminar</a> la tarjeta con el titulo "{{titulo}}".
+                                                            </div>
+
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                                                <a href="/links/deletetarjeta/{{tarjeta}}" class="btn btn-danger" >Eliminar</a>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal" id="modificatarjeta{{tarjeta}}">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <form action="/link/modificartarjeta/{{tarjeta}}" method="post">
+
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">Modificar Tarjetas</h4>
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            </div>
+
+                                                            <div class="modal-body">
+                                                                    
+                                                                <h5 style="color: royalblue;"><center> Modificar los datos de la tarjeta</center></h5>
+                                                                <div class="form-group">
+                                                                    <label for="titulo">Titulo nuevo:</label>
+                                                                    <input type="text" value="{{titulo}}" class="form-control" placeholder="Digite el nuevo titulo" id="titulo" name="titulo">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="valor">Texto nuveo:</label>
+                                                                    <input type="Texto" value="{{texto}}" class="form-control" placeholder="Digite el nuevo texto" id="texto" name="texto">
+                                                                </div>
+                                                                    
+                                                            </div>
+
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary">Modificar</button>
+                                                            </div>
+                                                            </form>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>           
+                                                        
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                </div>
+                                
+                                <br> <br>
+                                {{else}}
+                                <div class="col mx-auto">
+                                    <div style="background: rgb(139, 247, 247);" class="card card-body text-center">
+                                        <p>no has tenido ninguna situacion que ocacione una emergencia :d</p>
+                                    </div>
+                                </div>
+                                {{/each}}
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+        <div style="max-width: auto; padding: 10px;"  class="xd auto">
+            <div class="caja-posteo">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#exampleModalCenter">
+                            Emergencia
+                        </button>
+                    </div>
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Formulario</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container">
+                                        <div class="mx-auto">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <label for="Tipo">Boton del panico: </label>
+                                                    <br>
+                                                    <button style="width: 200px; height: 200px; border-radius: 100px;background: rgb(240, 78, 28);">Panic</button>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<br>
+

@@ -1,0 +1,153 @@
+    <div class="container p-4">
+        <div class="row">
+            {{#each todasTarjetas}}
+            <div class="col-md-5">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h4 class="card-title text-uppercase">
+                            <h6>{{usuario}}</h6>
+                        </h4>
+                        <h3>
+                           {{titulo}}
+                        </h3>
+                        <br>
+                        <h6>
+                            {{texto}} 
+                        </h6>
+                        <br><br>
+                        
+                        <h6>
+                            Fecha y hora:
+                        </h6>
+                        <h6>
+                            {{fecha}}
+                            <br>
+                            <br>
+                            {{timeago creacion}}
+                        </h6>
+                        <a href="" class="btn btn-danger" data-toggle="modal" data-target="#eliminartarjeta{{tarjeta}}">Eliminar</a>
+                        <a href="" class="btn btn-info" data-toggle="modal" data-target="#modificatarjeta{{tarjeta}}">Modificar</a>
+                        <div class="modal" id="eliminartarjeta{{tarjeta}}">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Eliminar</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        Desea <a style="background-color: red;" >Eliminar</a> la tarjeta con el titulo "{{titulo}}".
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                        <a href="/links/deletetarjeta/{{tarjeta}}" class="btn btn-danger" >Eliminar</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal" id="modificatarjeta{{tarjeta}}">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <form action="/link/modificartarjeta/{{tarjeta}}" method="post">
+
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Modificar Tarjetas</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                            
+                                        <h5 style="color: royalblue;"><center> Modificar los datos de la tarjeta</center></h5>
+                                        <div class="form-group">
+                                            <label for="titulo">Titulo nuevo:</label>
+                                            <input type="text" value="{{titulo}}" class="form-control" placeholder="Digite el nuevo titulo" id="titulo" name="titulo">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="valor">Texto nuveo:</label>
+                                            <input type="Texto" value="{{texto}}" class="form-control" placeholder="Digite el nuevo texto" id="texto" name="texto">
+                                        </div>
+                                            
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Modificar</button>
+                                    </div>
+                                    </form>
+
+                                </div>
+
+                            </div>
+                        </div>              
+                                    
+                    </div>
+                </div>
+                
+                
+            </div>
+            
+            <br> <br>
+            {{else}}
+            <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center">
+                    <p>Agrega una nueva card!!!</p>
+                    <button type="button" class="btn btn-purple" data-toggle="modal" data-target="#exampleModal">agregar</button>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <br> <br>
+        
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+            <center>
+            <button type="button" class="btn btn-purple" data-toggle="modal" data-target="#exampleModal">agregar</button>
+            <div class="modal" id="exampleModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h4 class="modal-title">Agregar nueva card</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <div class="modal-body">
+                            <form action="addtarjeta" method="post">
+                                
+                                <div class="form-group">
+                                    <label for="titulo">Titulo :</label>
+                                    <input type="text"  class="form-control" placeholder="Titulo" id="titulo" name="titulo">
+                                </div>
+                                <div class="form-group">
+                                    <label for="texto">Texto:</label>
+                                    <input type="text" class="form-control" placeholder="Texto" id="texto" name="texto">
+                                </div>
+                                <input type="hidden" placeholder="Milton" value="Milton" name="usuario" id="usuario">
+                                
+                                <div class="form-group">
+                                    <label for="fecha">Fecha:</label>
+                                    <input type="date" name="fecha" id="fecha">
+                                </div>
+                            
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit " class="btn btn-primary">Enviar</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </form>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+            </center>
+        </div>
+    </div>

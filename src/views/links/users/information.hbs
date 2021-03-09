@@ -1,0 +1,132 @@
+<script>
+    const pool = require('....../models/users');
+</script>
+<div class="container">
+    <div class="body-img">
+        <img class="img" src="/img/suaza.jpg" >
+        <br><br>
+        <div class="text-center">
+            {{#each todaInfoUser}}
+            <p>{{nickname}}</p>
+            {{/each}}
+        </div>
+    </div>
+    <img class="img-perfil" src="/img/suaza.jpg" >
+</div>
+<div style="background:rgb(103, 234, 252) ; "  class="container">
+    <div class="row">
+        <div class="col">
+            <button style="background-color: rgb(103, 234, 252); size: auto; background-color: black;" style="size: auto; background-color: black;" type="button" class="btn btn-primary btn-block">Informacion</button>
+
+        </div>
+        <div class="col">
+            <a href="/users/profile-security-information" style="background-color: rgb(103, 234, 252);" style="size: auto; background-color: black;" type="button" class="btn btn-primary btn-block">Seguridad</a>
+        </div>
+        <div class="col">
+            <a href="/users/profile-members" style="background-color: rgb(103, 234, 252);" type="button" class="btn btn-primary btn-block">Integrantes</a>
+        </div>
+    </div>
+</div>
+<br>
+<div style="border: 2px solid black; padding: 20px;" style="padding: 20px;" class="container">
+    <div class="infomacion">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            {{#each todaInfoUser}}
+                            <div class="col">
+                                <label style="color: black;" for="Nombre">Nombre(s):</label><br>
+                                <label style="color: black;" for="Apellido">Apellidos(s):</label><br>
+                                <label style="color: black;" for="Cedula">Cedula:</label><br>
+                                <label style="color: black;" for="Casa">Propiedad:</label><br>
+                            </div>
+                            <div class="col">
+                                <label style="color: black;" for="Nombre">{{nom_paterno}}  {{nom_materno}}</label><br>
+                                <label style="color: black;" for="Apellido">{{ape_paterno}} {{ape_materno}}</label><br>
+                                <label style="color: black;" for="Cedula">{{cedula}}</label><br>
+                                <label style="color: black;" for="Cedula">{{casa}}</label><br>
+                            </div>
+                            {{/each}}
+                        </div>
+                        <center>
+                            <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModalCenter">
+                            Modificar
+                            </button>
+                        </center>
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Formulario</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container">
+                                        <div class="mx-auto">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h5>Informacion Personal</h5>
+                                                    {{#each todaInfoUser}}
+                                                    <label style="color: black;" for="Nombres">Primer Nombre:<input type="text" id="" name="" value="{{nom_paterno}}" ></label>
+                                                    <label style="color: black;" for="Nombres">Segundo Nombre:<input type="text" id="" name="" value="{{nom_materno}}"></label>
+                                                    <label style="color: black;" for="Nombres">Apellido Paterno:<input type="Text" id="" name="" value="{{ape_paterno}}"></label>
+                                                    <label style="color: black;" for="Nombres">Apellido Materno:<input type="text" id="" name="" value="{{ape_materno}}"></label>
+                                                    <label style="color: black;" for="Nombres">Cedula:<input type="number" id="" name="" value="{{cedula}}" ></label>
+                                                    {{/each}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Modificar</button>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <br><br>
+                <div class="card text-center">
+                    <div style="height: 11rem;" class="card-body">
+                        <label style="color: black;" for="estado">Estado:</label>
+                        <input  style="background: chartreuse; border-radius: 40px;" type="text" name="estado" id="" placeholder="Estado mamalon">
+                        <button style="background:chartreuse ;" class="btn btn-primary" style="left: 20px;">></button> <br>
+                        <br>
+                        <p>estado mamalon</p>
+                        <center>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div style="height: 23rem;" class="card-body">
+                        <h4>Imagenes</h4>
+                        <div class="container">
+                            <div class="img-info-muestra">
+                                <img src="/img/suaza.jpg" alt="">
+                                <img src="/img/suaza.jpg" alt="">
+                                <img src="/img/suaza.jpg" alt="">
+                                <img src="/img/suaza.jpg" alt="">
+                                <img src="/img/suaza.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                            <button class="btn btn-primary">Nueva Imagen</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+

@@ -1,0 +1,287 @@
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+        <img src="/img/logo.png" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h5 style="color: black;">First slide label</h5>
+            <p style="color: black;">toca aplicar una imgen por falta de mas xd.</p>
+        </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+        <img src="/img/logo.png" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h5 style="color: black;">Second slide label</h5>
+            <p style="color: black;">toca aplicar una imgen por falta de mas xd.</p>
+        </div>
+        </div>
+        <div class="carousel-item">
+        <img src="/img/logo.png" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h5 style="color: black;">Third slide label</h5>
+            <p style="color: black;">toca aplicar una imgen por falta de mas xd.</p>
+        </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" style="background-color: rgb(0, 225, 255) ;" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" style="background-color: rgb(0, 225, 255) ;" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+    </div>
+    <br><br>
+
+
+    <nav style="background: rgb(11, 179, 245);" class="navbar navbar-light ">
+        <a  href="/users/inicio" class="navbar-brand mx-auto">inicio</a>
+        <a href="/users/sale" class="navbar-brand mx-auto">ventas</a>
+        <a href="/users/mas" class="navbar-brand mx-auto">Mas</a>
+    </nav>
+    <div class="xd">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="container">
+                    publicidad
+                    publicidad
+                    publicidad
+                    publicidad
+                    publicidad
+                    publicidad
+                    publicidad
+                    publicidad
+                    publicidad
+                    publicidad
+                </div>
+            </div>
+            <div class="col-md-8">
+                <center>
+                    <h6>Postea algo nuevo</h6>
+                </center>
+                <div class="container ">
+                    <div class="card text-center ">
+                        <div class="card-body">
+                                <div class="card text-center">
+                                    <div class="card-body" style="height: 8rem;">
+                                        <center>
+                                            <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModalCenter">
+                                                Publicar
+                                            </button>
+                                        </center>
+                                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    
+                                                    <h5 class="modal-title" id="exampleModalLongTitle">Formulario</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="container">
+                                                        <div class="mx-auto">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <h5>Informacion Personal</h5>
+                                                                    <form action="/users/addImgPP" method="post" enctype="multipart/form-data">
+                                                                    {{#each todaInfoUser}}
+                                                                    <input value="{{casa}}" type="hidden" name="fk_num_propiedad">
+                                                                    {{/each}}
+                                                                    <input value="1" type="hidden" name="fk_idGrupo">
+                                                                    <label style="color: black;" for="Titulo">Titulo: <input type="text" name="titulo" id="" placeholder="Titulo"></label>
+                                                                    <center>
+                                                                    <div class="input-group">
+                                                                        <div class="custom-file">
+                                                                            <input type="file" name="img" id="inputGroupFile01" class="custom-file-input">
+                                                                            <label style="color: black; width: 200px;" for="inputGroupFile01">
+                                                                                buscar imagen
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <label style="color: black;" for="titulo_img">Titulo de la imagen <input type="text" name="titulo_img" placeholder="Titulo Img"></label>
+                                                                    <label style="color: black;" for="titulo_img">Descripcion de la imagen <input type="text" name="descripcion_img" placeholder="descripcion Img"></label>
+                                                                    </center>
+                                                                    <label style="color: black;" for="Text">Informacion</label><br> <textarea name="texto" id="" cols="30" rows="5"></textarea>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="sutmit" class="btn btn-primary">Agregar comentario</button>
+                                                    
+                                                </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                            <div class="form-group">  
+                        </div>
+                    </div>    
+                </div>
+                </div>
+                <br>
+                <div  class="caja-posteo">
+                <div  class="card text-center ">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col mx-auto">
+                                    <div class="card text-center">
+                                        <div class="card-body">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5> Converzacion</h5>
+                        
+                        <div style="height: 400px;" class="Content " >
+                            {{#each todaInfoPP}}
+                            
+                                <div class="col mx-auto">
+                                    <div class="card text-center">
+                                        <div style="background: rgb(139, 247, 247);" class="card-body">
+                                            <div class="card">
+                                                <h4 class="card-title text-uppercase">
+                                                    <h6>Casa-Tipo de Queja</h6>
+                                                    <h6>{{casa}}-{{nickname}}</h6>
+                                                </h4>
+                                                <div class="text-center">
+                                                    <h6 style="color: blueviolet;">{{titulo}}</h6>
+                                                </div>
+                                                <div class="container text-center">
+                                                <img style="width: 300px; height: 300px; margin-block: 1px rgb(91, 219, 241); padding: 4px;"  src="{{img_url}}" alt=""><br><br>
+
+                                                </div>
+                                                <p>
+                                                    {{texto}}
+                                                </p>
+                                                <br>
+
+                                                <p style="color: red;">
+                                                    hace {{timeago creacion}}
+                                                </p>
+                                            
+                                                <a href="" class="btn btn-danger" data-toggle="modal" data-target="#eliminar{{idInformacion}}">Eliminar</a>
+                                                <a href="" class="btn btn-info" data-toggle="modal" data-target="#modificar{{idInformacion}}">Modificar</a>
+                                                <div class="modal" id="eliminar{{idInformacion}}">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">Eliminar</h4>
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            </div>
+
+                                                            <div class="modal-body">
+                                                                Desea <a style="background-color: red;" >Eliminar</a> la iformacion con el titulo "{{titulo}}".
+                                                            </div>
+
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                                                <a href="/users/deleteImgPP/{{idInformacion}}" class="btn btn-danger" >Eliminar</a>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal" id="modificar{{idInformacion}}">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">Modificar Informacion</h4>
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            </div>
+
+                                                            <div class="modal-body">
+                                                                    
+                                                                <div class="card">
+                                                                <div class="card-body">
+                                                                    <h5>Informacion </h5>
+                                                                    <form action="/users/modifyImgPP/{{idInformacion}}" method="post" enctype="multipart/form-data">
+                                                                    <input value="{{casa}}" type="hidden" name="fk_num_propiedad">
+
+                                                                    <input value="1" type="hidden" name="fk_idGrupo">
+                                                                    <label style="color: black;" for="Titulo">Titulo: <input value="{{titulo}}" type="text" name="titulo" id="" placeholder="Titulo"></label>
+                                                                    <center>
+                                                                    <div class="input-group">
+                                                                        <div class="custom-file">
+                                                                            <input type="file"  name="img" id="inputGroupFile01" class="custom-file-input">
+                                                                            <label style="color: black; width: 200px;" for="inputGroupFile01">
+                                                                                buscar imagen
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <label style="color: black;" for="titulo_img">Titulo de la imagen <input value="{{titulo_img}}" type="text" name="titulo_img" placeholder="Titulo Img"></label>
+                                                                    <label style="color: black;" for="titulo_img">Descripcion de la imagen <input value="{{descripcion_img}}" type="text" name="descripcion_img" placeholder="descripcion Img"></label>
+                                                                    </center>"
+                                                                    <label style="color: black;" for="Text">Informacion</label><br> <textarea value= "{{texto}}" name="texto" id="" cols="30" rows="5"></textarea>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                                    
+                                                            </div>
+
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary">Modificar</button>
+                                                            </div>
+                                                            </form>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                
+                                            </div>           
+                                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <br> <br>
+                                {{else}}
+                                <div class="col mx-auto">
+                                    <div style="background: rgb(139, 247, 247);" class="card card-body text-center">
+                                        <p>Comienza la converzacion!!!</p>
+                                    </div>
+                                </div>
+                                {{/each}}
+                        </div>
+                    </div>    
+                </div>
+            </div>
+            </div>
+            <div class="col-md-2 ">
+                <div class="xd">
+                    publicidad
+                    publicidad
+                    publicidad
+                    publicidad
+                    publicidad
+                    publicidad
+                    publicidad
+                    publicidad
+                    publicidad   
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>

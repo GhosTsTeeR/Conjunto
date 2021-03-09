@@ -1,0 +1,77 @@
+    <div class="container p-6">
+        <div class="row">
+            <dic class="col">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h4 class="card-title text-uppercase">
+                            <h6>Mis contactos</h6>
+                        </h6>          
+                        <input class="btn btn-info btn-block" type="submit" value="andres-propietario">       
+                    </div>
+                </div>  
+            </dic>
+
+            <div class="col-md-8">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h4 class="card-title text-uppercase">
+                            <h6>andres-propietario</h6>
+                        </h4>
+                        <h3>
+                            <h5> Converzacion</h5>
+                        
+                        <div style="height: 400px;" class="Content " >
+                            {{#each todosMensajes}}
+                                <div class="col mx-auto">
+                                    <div class="card text-center">
+                                        <div style="background: rgb(139, 247, 247);" class="card-body">
+                                            <div class="card">
+                                                <div class="datos-chat">
+
+                                                <span style="color: aqua;">{{username}}</span> <br>
+                                                <span style="color: rgb(115, 255, 0);">{{mensaje}}</span>
+                                                <span style="float:right;">{{fecha}}</span><br>
+
+                                            </div>
+                                            </div>           
+                                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <br> <br>
+                                {{else}}
+                                <div class="col mx-auto">
+                                    <div style="background: rgb(139, 247, 247);" class="card card-body text-center">
+                                        <p>Comienza la converzacion!!!</p>
+                                    </div>
+                                </div>
+                                {{/each}}
+                        </div>
+                        <form action="/users/addMessage" method="post">
+                                {{#each todosMensajes}}
+                                <input type="hidden" value="{{username}}" name="fk_username" id="fk_username">
+                                
+                                <input type="hidden" value="{{receptor}}" name="receptor" id="receptor">
+                                {{/each}}
+                                <input class="btn btn-block" type="text" name="mensaje"  placeholder="Envie el Mensaje uwu">
+                                <input class="btn btn-default" type="submit" value="Enviar">
+                        </form>
+
+                        <div class="contenedor">
+                            <div class="caja-chat">
+                                
+                            </div>
+                            
+                        </div>          
+                                    
+                    </div>
+                </div>   
+            </div>
+            
+            <br> <br>
+
+        </div>
+        <br> <br>
+        
+    </div>

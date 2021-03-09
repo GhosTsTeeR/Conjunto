@@ -1,0 +1,154 @@
+body {
+    background: rgb(240, 247, 204);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #333333;
+    line-height: 1.2rem;
+    line-height: 1.4rem;
+    margin: 0;
+}
+h1 {
+    font-size: 2rem;
+    line-height: 1.3em;
+}
+p {
+    margin-bottom: 1.6em;
+}
+.container {
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.inicio {
+    padding: 8rem;
+
+    max-width: 2000px;
+    margin: 0 auto;
+
+}
+.logo-nav-container img {
+    width: 70px;
+    height: 36px;
+}
+.logo-sesion img {
+    width: 40px;
+    height: 36px;
+}
+/* .redondeadonorelieve {
+    border-radius: 5px;
+    border: 1px solid #39c;
+    background-color: turquoise;
+  } */
+.main {
+    padding-top: 40rem;
+}
+
+.header {
+    background: rgb(23, 2, 99);
+    color: white;
+    left: 0;
+    top: 0;
+    right: 0;
+
+}
+.header a{
+    color: white;
+    text-decoration: none;
+    padding: 2.5rem 0;
+}
+.logo-nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+}
+.menu-icon {
+    display: none;
+}
+.navegacion ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.navegacion ul li {
+    display: inline-block;
+}
+    .navegacion ul li a {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        transition: all 0.4s linear;
+        border-radius: 5px;
+    }
+        .navegacion ul li a:hover {
+            background: rgb(181, 252, 246);
+
+        }
+@media only screen and (max-width: 767px) {
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+    }
+    
+    .navegacion {
+        width: 100%;
+        margin: 1rem;
+    }
+        .navegacion ul {
+            display: none;
+
+        }
+        .navegacion ul.show {
+            display: block;
+        }
+
+        .navegacion ul li {
+            display: block;
+        }
+            .navegacion ul li a {
+                display: inline-block;
+                padding: 0.5rem 0;
+                transition: all 0.4s linear;
+                border-radius: 5px;
+            }
+                .navegacion ul li a:hover {
+                    background: rgb(152, 233, 226);
+        
+                }
+}
+
+.options ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.options ul li {
+    display: inline-block;
+}
+    .options ul li a {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        transition: all 0.4s linear;
+        border-radius: 5px;
+    }
+        .options ul li a:hover {
+            background: rgb(181, 252, 246);
+
+        }
+
+.FixedHeightContainer {
+    height: 700px;
+    width: auto; 
+    padding:3px; 
+    background:rgb(89, 227, 252);
+}
+
+.Content {
+    
+    overflow: auto;
+    background:#fff;
+}
+.options {
+    border: 1px solid black;  
+}
